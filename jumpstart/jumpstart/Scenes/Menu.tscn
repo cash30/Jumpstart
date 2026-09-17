@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://ddweh0fcsbkkc"]
+
+[ext_resource type="Texture2D" uid="uid://b73kbk4arvawr" path="res://Images/godot.png" id="1_3kf3n"]
+
+[sub_resource type="Theme" id="Theme_3kf3n"]
+
+[node name="Node2D" type="Node2D" unique_id=183879801]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=215957515]
+offset_top = -1.0
+offset_right = 1152.0
+offset_bottom = 647.0
+color = Color(0.24659845, 0.2977286, 0.7496441, 1)
+
+[node name="Button" type="Button" parent="." unique_id=2021096397]
+offset_left = 456.0
+offset_top = 143.0
+offset_right = 697.0
+offset_bottom = 239.0
+text = "Play"
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1949407116]
+offset_left = 459.0
+offset_top = 370.0
+offset_right = 700.0
+offset_bottom = 396.0
+theme = SubResource("Theme_3kf3n")
+color = Color(0.6872149, 0.68721503, 0.68721485, 1)
+
+[node name="CheckButton" type="CheckButton" parent="ColorRect2" unique_id=775775080]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sound"
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1148651541]
+offset_left = 461.0
+offset_top = 418.0
+offset_right = 702.0
+offset_bottom = 444.0
+color = Color(0.6872149, 0.68721503, 0.68721485, 1)
+
+[node name="CheckButton" type="CheckButton" parent="ColorRect3" unique_id=1220103705]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BGM"
+
+[node name="Godot" type="Sprite2D" parent="." unique_id=1240191413]
+position = Vector2(575, 307)
+scale = Vector2(4.812499, 3.96875)
+texture = ExtResource("1_3kf3n")
