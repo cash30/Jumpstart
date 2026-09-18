@@ -6,10 +6,12 @@ const sprintSpeed = 700
 var curSpeed = SPEED
 const JUMP_VELOCITY = -400.0
 var wasFalling
-@onready var sound = $Thump
+@onready var tap = $Thump
+@onready var scrape = $scrape
+@onready var particles = $particles
 
+var shouldBePlayingScrape = false
 func _physics_process(delta: float) -> void:
-	
 	if global_position.y > 3000:
 		get_tree().reload_current_scene()
 	if not is_on_floor():
@@ -17,8 +19,7 @@ func _physics_process(delta: float) -> void:
 			wasFalling = true
 	else:
 			if wasFalling:
-				sound.play()
-				print("playing sound")
+				tap.play()
 				wasFalling = false
 	
 	if Input.is_action_pressed("sprint"):
@@ -29,7 +30,12 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	if is_on_floor() && velocity.x != 0 && !scrape.is_playing():
+		scrape.play()
+		particles.emitting = true
+	elif !is_on_floor() || velocity.x == 0:
+		scrape.stop()
+		particles.emitting = false
 	# Handle jump.
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY

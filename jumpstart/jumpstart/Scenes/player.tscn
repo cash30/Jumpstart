@@ -1,25 +1,58 @@
 [gd_scene format=3 uid="uid://bsmlgwxbmr473"]
 
 [ext_resource type="Script" uid="uid://cjdk7t2cnye8c" path="res://Scenes/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://b73kbk4arvawr" path="res://Images/godot.png" id="3_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://cf67htvnwqp8v" path="res://Images/Black square.png" id="3_6t5aa"]
 [ext_resource type="AudioStream" uid="uid://cwod8m7y18al5" path="res://Sounds/thump.mp3" id="3_vgqql"]
+[ext_resource type="AudioStream" uid="uid://byaln6p4d2k0w" path="res://Sounds/scraping.mp3" id="4_vgqql"]
+[ext_resource type="Texture2D" uid="uid://ge5o4ttx5a8g" path="res://Images/white square.png" id="5_fkybt"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dmtml"]
-radius = 63.0
-height = 126.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgl5k"]
+size = Vector2(126, 125)
 
 [node name="Player" type="CharacterBody2D" unique_id=1096137445]
 script = ExtResource("1_cvnsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2128376468]
-shape = SubResource("CapsuleShape2D_dmtml")
-
-[node name="Godot" type="Sprite2D" parent="." unique_id=1311806621]
-position = Vector2(0.49999928, -0.49999756)
-scale = Vector2(4.5937495, 4.53125)
-texture = ExtResource("3_6t5aa")
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_vgl5k")
 
 [node name="Thump" type="AudioStreamPlayer2D" parent="." unique_id=1124944067]
 stream = ExtResource("3_vgqql")
 volume_db = 24.0
 pitch_scale = 0.85
+
+[node name="BlackSquare" type="Sprite2D" parent="." unique_id=519548022]
+position = Vector2(3.5762787e-07, 0.4999993)
+scale = Vector2(4, 3.9687495)
+texture = ExtResource("3_6t5aa")
+
+[node name="scrape" type="AudioStreamPlayer2D" parent="." unique_id=1406599830]
+stream = ExtResource("4_vgqql")
+volume_db = 12.0
+autoplay = true
+
+[node name="particles" type="CPUParticles2D" parent="." unique_id=375220846]
+position = Vector2(-5, 82)
+amount = 10
+texture = ExtResource("5_fkybt")
+speed_scale = 1.65
+randomness = 0.2
+emission_shape = 3
+emission_rect_extents = Vector2(45, 1)
+spread = 93.95
+gravity = Vector2(0, 100)
+initial_velocity_min = 0.1
+initial_velocity_max = 10.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+linear_accel_max = 100.0
+radial_accel_max = 200.0
+tangential_accel_max = 100.0
+damping_max = 100.0
+angle_max = 365.0
+scale_amount_min = 0.09
+scale_amount_max = 0.11
+anim_speed_min = 1.27
+anim_speed_max = 17.75
+anim_offset_min = 0.0099
+anim_offset_max = 0.1584
