@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bb4p37npllntt"
+path="res://.godot/imported/Recording (5).mp3-11d72243541ef14466862a0c33bbf979.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Voice/intro take 2/Recording (5).mp3"
+dest_files=["res://.godot/imported/Recording (5).mp3-11d72243541ef14466862a0c33bbf979.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

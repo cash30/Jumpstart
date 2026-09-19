@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bfmxceurpcbsq"
+path="res://.godot/imported/Recording (13).mp3-98aa852cec1e4ef4fd2a4d7c45d90fb6.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Voice/intro take 2/Recording (13).mp3"
+dest_files=["res://.godot/imported/Recording (13).mp3-98aa852cec1e4ef4fd2a4d7c45d90fb6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
